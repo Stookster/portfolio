@@ -12,7 +12,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={import.meta.env.MODE === 'production' ? '/portfolio' : '/'}>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
         </Routes>
