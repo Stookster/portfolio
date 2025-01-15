@@ -10,7 +10,6 @@ const Skills = () => {
     "Bug Tracking",
     "Test Documentation",
     "Agile Methodologies",
-    "CI/CD Integration",
     "Test Strategy Development",
   ];
 
