@@ -1,15 +1,52 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   const navItems = [
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Contact", href: "#contact" },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map((item) => 
+        document.querySelector(item.href) as HTMLElement
+      );
+
+      const currentSection = sections.find((section) => {
+        if (!section) return false;
+        const rect = section.getBoundingClientRect();
+        return rect.top <= 100 && rect.bottom >= 100;
+      });
+
+      if (currentSection) {
+        setActiveSection(currentSection.id);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleClick = (href: string) => {
+    setIsOpen(false);
+    const element = document.querySelector(href);
+    if (element) {
+      const offset = 80; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
 
   return (
     <nav className="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b">
@@ -22,13 +59,17 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="text-secondary hover:text-accent transition-colors"
+                onClick={() => handleClick(item.href)}
+                className={`text-secondary hover:text-accent transition-colors ${
+                  activeSection === item.href.substring(1)
+                    ? "text-primary font-medium"
+                    : ""
+                }`}
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </div>
 
@@ -51,14 +92,17 @@ const Navigation = () => {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-b">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="block px-3 py-2 text-secondary hover:text-accent transition-colors"
-                onClick={() => setIsOpen(false)}
+                onClick={() => handleClick(item.href)}
+                className={`block w-full text-left px-3 py-2 text-secondary hover:text-accent transition-colors ${
+                  activeSection === item.href.substring(1)
+                    ? "text-primary font-medium"
+                    : ""
+                }`}
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </div>
         </div>
