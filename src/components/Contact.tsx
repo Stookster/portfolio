@@ -34,8 +34,10 @@ const Contact = () => {
   return (
     <section 
       id="contact" 
-      className={`py-20 transition-all duration-400 ease-in-out ${
-        isHighlighted ? 'bg-accent/20 opacity-100' : 'bg-muted opacity-95'
+      className={`py-20 ${
+        isHighlighted 
+          ? 'bg-accent/20 opacity-100 transition-all duration-300 ease-in'
+          : 'bg-muted opacity-95 transition-all duration-500 ease-out'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
