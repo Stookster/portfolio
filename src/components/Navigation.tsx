@@ -37,7 +37,7 @@ const Navigation = () => {
     setIsOpen(false);
     const element = document.querySelector(href);
     if (element) {
-      const offset = 80; // Account for fixed header
+      const offset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -53,7 +53,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <span className="text-xl font-semibold text-primary">RS</span>
+            <span className="text-xl font-semibold text-primary font-orbitron tracking-wider">RS</span>
           </div>
           
           {/* Desktop Navigation */}
