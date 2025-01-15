@@ -90,12 +90,12 @@ const Navigation = () => {
       {/* Mobile Navigation Menu */}
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-2 bg-white border-b text-right">
+          <div className="px-2 pt-2 pb-3 space-y-2 bg-white border-b">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => handleClick(item.href)}
-                className={`w-full text-left py-2 text-secondary hover:text-accent transition-colors ${
+                className={`block w-full text-right py-2 text-secondary hover:text-accent transition-colors ${
                   activeSection === item.href.substring(1)
                     ? "text-primary font-medium"
                     : ""
