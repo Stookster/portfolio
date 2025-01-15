@@ -5,7 +5,7 @@ const Skills = () => {
     "Test Automation",
     "Manual Testing",
     "API Testing",
-    "Performance Testing",
+    "Security Testing",
     "Test Planning",
     "Bug Tracking",
     "Test Documentation",
