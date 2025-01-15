@@ -9,12 +9,12 @@ const Contact = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Longer delay to ensure scroll is complete
+            // Shorter delay to be more responsive
             setTimeout(() => {
               setIsHighlighted(true);
-              // Keep the highlight visible for even longer
-              setTimeout(() => setIsHighlighted(false), 6000);
-            }, 1000);
+              // Shorter highlight duration
+              setTimeout(() => setIsHighlighted(false), 2000);
+            }, 300);
           }
         });
       },
