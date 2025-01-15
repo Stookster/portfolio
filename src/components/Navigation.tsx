@@ -18,18 +18,20 @@ const Navigation = () => {
         document.querySelector(item.href) as HTMLElement
       );
 
-      const currentSection = sections.find((section) => {
-        if (!section) return false;
+      let currentSection = "";
+      sections.forEach((section) => {
+        if (!section) return;
         const rect = section.getBoundingClientRect();
-        return rect.top <= 100 && rect.bottom >= 100;
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          currentSection = section.id;
+        }
       });
 
-      if (currentSection) {
-        setActiveSection(currentSection.id);
-      }
+      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
