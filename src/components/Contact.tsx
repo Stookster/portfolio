@@ -36,7 +36,7 @@ const Contact = () => {
   return (
     <section 
       id="contact" 
-      className={`py-20 transition-colors duration-300 ${
+      className={`py-20 transition-colors duration-400 ${
         isHighlighted ? 'bg-accent/20' : 'bg-muted'
       }`}
     >
