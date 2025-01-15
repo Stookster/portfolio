@@ -66,7 +66,7 @@ const Navigation = () => {
                 onClick={() => handleClick(item.href)}
                 className={`text-secondary hover:text-accent transition-colors ${
                   activeSection === item.href.substring(1)
-                    ? "text-primary font-medium"
+                    ? "text-primary"
                     : ""
                 }`}
               >
@@ -99,7 +99,7 @@ const Navigation = () => {
                 onClick={() => handleClick(item.href)}
                 className={`block w-full text-right py-2 text-secondary hover:text-accent transition-colors ${
                   activeSection === item.href.substring(1)
-                    ? "text-primary font-medium"
+                    ? "text-primary"
                     : ""
                 }`}
               >
