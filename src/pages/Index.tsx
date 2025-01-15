@@ -7,7 +7,7 @@ import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       <Hero />
       <About />
