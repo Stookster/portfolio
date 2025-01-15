@@ -46,7 +46,7 @@ const Hero = () => {
           </div>
           <div className="flex-1 flex justify-center">
             <img
-              src="/lovable-uploads/c9489222-e6bc-4d8d-862b-129f9eab3873.png"
+              src="/professional-portfolio-haven/lovable-uploads/c9489222-e6bc-4d8d-862b-129f9eab3873.png"
               alt="Richard Stöök"
               className="w-64 md:w-80 rounded-2xl shadow-lg animate-[scale-in_0.8s_ease-out]"
               style={{ animationDelay: '1s', animationFillMode: 'backwards' }}
