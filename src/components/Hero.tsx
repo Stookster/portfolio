@@ -1,4 +1,12 @@
 const Hero = () => {
+  const handleGetInTouch = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div 
       className="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
@@ -29,6 +37,7 @@ const Hero = () => {
             </p>
             <a
               href="#contact"
+              onClick={handleGetInTouch}
               className="inline-block bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent/90 transition-all duration-300 transform hover:scale-105 animate-[fade-up_0.6s_ease-out]"
               style={{ animationDelay: '0.8s', animationFillMode: 'backwards' }}
             >
