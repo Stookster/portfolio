@@ -1,8 +1,41 @@
 import { Mail, Linkedin, Github } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Contact = () => {
+  const [isHighlighted, setIsHighlighted] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsHighlighted(true);
+            setTimeout(() => setIsHighlighted(false), 2000); // Reset after 2 seconds
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      observer.observe(contactSection);
+    }
+
+    return () => {
+      if (contactSection) {
+        observer.unobserve(contactSection);
+      }
+    };
+  }, []);
+
   return (
-    <section id="contact" className="py-20 bg-muted">
+    <section 
+      id="contact" 
+      className={`py-20 bg-muted transition-colors duration-500 ${
+        isHighlighted ? 'bg-accent/10' : ''
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-primary mb-12 text-center">
           Get in Touch
