@@ -9,8 +9,12 @@ const Contact = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsHighlighted(true);
-            setTimeout(() => setIsHighlighted(false), 2000); // Reset after 2 seconds
+            // Add a small delay before starting the highlight to account for scroll completion
+            setTimeout(() => {
+              setIsHighlighted(true);
+              // Keep the highlight visible for longer (4 seconds)
+              setTimeout(() => setIsHighlighted(false), 4000);
+            }, 500);
           }
         });
       },
