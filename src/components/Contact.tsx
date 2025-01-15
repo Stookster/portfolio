@@ -9,10 +9,8 @@ const Contact = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Minimal delay for immediate feedback
             setTimeout(() => {
               setIsHighlighted(true);
-              // Quick highlight duration
               setTimeout(() => setIsHighlighted(false), 800);
             }, 100);
           }
@@ -36,8 +34,8 @@ const Contact = () => {
   return (
     <section 
       id="contact" 
-      className={`py-20 transition-colors duration-400 ${
-        isHighlighted ? 'bg-accent/20' : 'bg-muted'
+      className={`py-20 transition-all duration-400 ease-in-out ${
+        isHighlighted ? 'bg-accent/20 opacity-100' : 'bg-muted opacity-95'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
