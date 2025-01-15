@@ -26,7 +26,7 @@ const About = () => {
           <div className="relative animate-fade-up">
             <div className="aspect-square rounded-2xl overflow-hidden">
               <img
-                src="/professional-portfolio-haven/lovable-uploads/c9489222-e6bc-4d8d-862b-129f9eab3873.png"
+                src="/portfolio/lovable-uploads/c9489222-e6bc-4d8d-862b-129f9eab3873.png"
                 alt="Richard Stöök"
                 className="object-cover w-full h-full"
               />

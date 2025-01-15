@@ -14,7 +14,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/professional-portfolio-haven" element={<Index />} />
+          <Route path="/portfolio" element={<Index />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
