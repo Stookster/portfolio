@@ -49,7 +49,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b">
+    <nav className="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -89,7 +89,7 @@ const Navigation = () => {
 
       {/* Mobile Navigation Menu */}
       {isOpen && (
-        <div className="md:hidden w-full">
+        <div className="md:hidden">
           <div className="px-4 pt-2 pb-3 space-y-2 bg-white border-b">
             {navItems.map((item) => (
               <button
