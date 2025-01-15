@@ -9,12 +9,12 @@ const Contact = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Add a small delay before starting the highlight to account for scroll completion
+            // Longer delay to ensure scroll is complete
             setTimeout(() => {
               setIsHighlighted(true);
-              // Keep the highlight visible for longer (4 seconds)
-              setTimeout(() => setIsHighlighted(false), 4000);
-            }, 500);
+              // Keep the highlight visible for even longer
+              setTimeout(() => setIsHighlighted(false), 6000);
+            }, 1000);
           }
         });
       },
@@ -36,8 +36,8 @@ const Contact = () => {
   return (
     <section 
       id="contact" 
-      className={`py-20 bg-muted transition-colors duration-500 ${
-        isHighlighted ? 'bg-accent/10' : ''
+      className={`py-20 transition-colors duration-1000 ${
+        isHighlighted ? 'bg-accent/20' : 'bg-muted'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
