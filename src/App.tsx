@@ -7,14 +7,12 @@ import Index from "./pages/Index";
 
 const queryClient = new QueryClient();
 
-const basename = import.meta.env.DEV ? '/' : '/portfolio';
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={basename}>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
         </Routes>
