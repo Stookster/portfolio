@@ -20,9 +20,13 @@ npm i
 npm run dev
 ```
 
+## Deployment
+
+This project is configured to deploy automatically to GitHub Pages when changes are pushed to the main branch. The live site can be accessed at: https://your-username.github.io/portfolio/
+
 ## What technologies are used for this project?
 
-This project is built with .
+This project is built with:
 
 - Vite
 - TypeScript
